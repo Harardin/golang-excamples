@@ -1,0 +1,24 @@
+/*
+Example of calculating int distance betwen 2 numbers or Perceptual hash of imgs for example
+max is maximum allowed distance and difference is the actual difference between numbers
+
+Anyway this is not always percise
+*/
+package main
+
+import (
+	"fmt"
+	"math/bits"
+)
+
+func main() {
+	fmt.Println("fmt")
+	var c float32 = 0.9
+	max := int(64 * (1 - c))
+	fmt.Printf("Max num: %d\n", max)
+	a := -8617569306821769309
+	b := -8617569306821769309
+	// b := -470505208403222322
+	difference := bits.OnesCount64(uint64(a) ^ uint64(b))
+	fmt.Printf("Difference %d\n", difference)
+}
